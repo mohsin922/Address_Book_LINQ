@@ -24,7 +24,10 @@ namespace AddressBookSystemLinQ
             //addressBookTable.RetrieveByCityOrState("Srinagar", "Jammu and Kashmir");
 
             // UC7
-            addressBookTable.CountByCityOrState("Srinagar", "Jammu and Kashmir");
+            //addressBookTable.CountByCityOrState("Srinagar", "Jammu and Kashmir");
+
+            // UC8
+            addressBookTable.SortedContactsByNameForAgivenCity("Srinagar");
         }
     }
 }
