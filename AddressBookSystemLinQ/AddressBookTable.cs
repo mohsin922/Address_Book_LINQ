@@ -91,5 +91,17 @@ namespace AddressBookSystemLinQ
                 Console.WriteLine("Email:- " + dataRow.Field<string>("eMail"));
             }
         }
+
+        // UC7: size/count of address book by City and State 
+        public void CountByCityOrState(string city, string state)
+        {
+            var contact = from c in dataTable.AsEnumerable()
+                          where c.Field<string>("City") == city && c.Field<string>("State") == state
+                          select c;
+
+            Console.WriteLine("Count of contacts in {0}, {1} is {2}", city, state, contact.Count());
+        }
+
+
     }
 }

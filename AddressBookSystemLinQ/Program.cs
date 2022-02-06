@@ -21,7 +21,10 @@ namespace AddressBookSystemLinQ
             //addressBookTable.DeleteContact("Raj", "Verma");
 
             // UC6
-            addressBookTable.RetrieveByCityOrState("Srinagar", "Jammu and Kashmir");
+            //addressBookTable.RetrieveByCityOrState("Srinagar", "Jammu and Kashmir");
+
+            // UC7
+            addressBookTable.CountByCityOrState("Srinagar", "Jammu and Kashmir");
         }
     }
 }
