@@ -53,5 +53,21 @@ namespace AddressBookSystemLinQ
             Console.WriteLine("Record successfully Edited");
             DisplayContacts();
         }
+
+        // UC5:- Delete a person using person's name.
+        public void DeleteContact(string firstName, string lastName)
+        {
+            try
+            {
+                DataRow contact = dataTable.Select("FirstName = '" + firstName + "' and LastName = '" + lastName + "'").FirstOrDefault();
+                dataTable.Rows.Remove(contact);
+                Console.WriteLine("Record Successfully Deleted");
+                DisplayContacts();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
     }
 }
