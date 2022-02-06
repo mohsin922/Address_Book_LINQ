@@ -102,6 +102,28 @@ namespace AddressBookSystemLinQ
             Console.WriteLine("Count of contacts in {0}, {1} is {2}", city, state, contact.Count());
         }
 
+        //UC8:- Retrieve entries sorted alphabetically by Person’s name for a given city
+        public void SortedContactsByNameForAgivenCity(string City)
+        {
+            Console.WriteLine("Sorting by name for City");
+            var retrievedData = from records in dataTable.AsEnumerable()
+                                where records.Field<string>("City") == City
+                                orderby records.Field<string>("FirstName"), records.Field<string>("LastName")
+                                select records;
+            foreach (var dataRow in retrievedData)
+            {
+                Console.WriteLine("\n");
+                Console.WriteLine("FirstName:- " + dataRow.Field<string>("firstName"));
+                Console.WriteLine("LastName:- " + dataRow.Field<string>("lastName"));
+                Console.WriteLine("Address:- " + dataRow.Field<string>("address"));
+                Console.WriteLine("City:- " + dataRow.Field<string>("city"));
+                Console.WriteLine("State:- " + dataRow.Field<string>("state"));
+                Console.WriteLine("Zip:- " + dataRow.Field<string>("zip"));
+                Console.WriteLine("PhoneNumber:- " + dataRow.Field<string>("phoneNumber"));
+                Console.WriteLine("Email:- " + dataRow.Field<string>("eMail"));
+            }
+        }
+
 
     }
 }
