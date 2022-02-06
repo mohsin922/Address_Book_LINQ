@@ -10,6 +10,8 @@ namespace AddressBookSystemLinQ
 
             // UC 1 Create a new table
             AddressBookTable addressBookTable = new AddressBookTable();
+
+            addressBookTable.DisplayContacts();
         }
     }
 }
