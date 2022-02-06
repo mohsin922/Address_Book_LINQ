@@ -18,7 +18,10 @@ namespace AddressBookSystemLinQ
             //addressBookTable.EditExistingContact("Mohsin", "Zahoor", "PhoneNumber", "7006703679");
 
             // UC5
-            addressBookTable.DeleteContact("Raj", "Verma");
+            //addressBookTable.DeleteContact("Raj", "Verma");
+
+            // UC6
+            addressBookTable.RetrieveByCityOrState("Srinagar", "Jammu and Kashmir");
         }
     }
 }
