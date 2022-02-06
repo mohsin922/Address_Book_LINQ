@@ -11,7 +11,11 @@ namespace AddressBookSystemLinQ
             // UC 1 Create a new table
             AddressBookTable addressBookTable = new AddressBookTable();
 
-            addressBookTable.DisplayContacts();
+            ////UC3
+            //addressBookTable.DisplayContacts();
+
+            // UC4
+            addressBookTable.EditExistingContact("Mohsin", "Zahoor", "PhoneNumber", "7006703679");
         }
     }
 }

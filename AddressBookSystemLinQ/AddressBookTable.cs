@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Text;
 
 namespace AddressBookSystemLinQ
@@ -41,6 +42,16 @@ namespace AddressBookSystemLinQ
                 Console.WriteLine("PhoneNumber:- " + dataRow.Field<string>("PhoneNumber"));
                 Console.WriteLine("Email:- " + dataRow.Field<string>("Email"));
             }
+        }
+
+        /*UC4:- Ability to edit existing contact person using their name
+         */
+        public void EditExistingContact(string firstName, string lastName, string column, string newValue)
+        {                                                                   // FirstOrDefault comes from System.Linq Namespace
+            DataRow contact = dataTable.Select("FirstName = '" + firstName + "' and LastName = '" + lastName + "'").FirstOrDefault();
+            contact[column] = newValue;
+            Console.WriteLine("Record successfully Edited");
+            DisplayContacts();
         }
     }
 }
